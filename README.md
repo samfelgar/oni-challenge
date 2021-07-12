@@ -1,7 +1,5 @@
 # Oni Tecnologia
 
-Projeto/desafio técnico proposto pela Oni Tecnologia para a vaga de desenvolvedor web pleno.
-
 Construído utilizando:
 
 - PHP 7
