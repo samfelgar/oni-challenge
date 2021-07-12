@@ -1,0 +1,42 @@
+<h1>Pacientes</h1>
+
+<div class="d-flex justify-content-end">
+    <a href="<?= $this->url(['controller' => 'patient', 'action' => 'add']) ?>" class="btn btn-primary">Novo
+        paciente</a>
+</div>
+
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Nome</th>
+        <th>Gênero</th>
+        <th>Nascimento</th>
+        <th>Convênio</th>
+        <th>Opções</th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php foreach ($this->patients as $patient): ?>
+        <tr>
+            <td><?= $patient->getId() ?></td>
+            <td><?= $patient->getName() ?></td>
+            <td><?= ucfirst($patient->getTranslatedGender()) ?></td>
+            <td><?= $patient->getDayOfBirth()->format('d/m/Y') ?></td>
+            <td><?= $patient->getHealthInsurance() ?></td>
+            <td>
+                <a href="<?= $this->url(['controller' => 'patient', 'action' => 'edit', 'id' => $patient->getId()]) ?>"
+                   class="btn btn-sm btn-warning">Editar</a>
+
+                <form action="<?= $this->url(['controller' => 'patient', 'action' => 'delete', 'id' => $patient->getId()]) ?>"
+                      method="post"
+                      class="d-inline"
+                      onsubmit="return confirm('Deseja realmente excluir o paciente?');"
+                >
+                    <button class="btn btn-sm btn-danger" type="submit">Excluir</button>
+                </form>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+    </tbody>
+</table>
