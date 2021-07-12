@@ -11,8 +11,9 @@ Requisitos:
 - PHP ^7.1
 - SQLite extension for PHP
 
-O projeto pode ser executado utilizando o built-in server do PHP, com o comando:
+O projeto pode ser executado utilizando o built-in server do PHP, com os seguintes passos:
 
-`php -S localhost:8000`
+- Navegue para a pasta /public
+- Execute `php -S localhost:8000`
 
 A seguir, navegue para o endereço/porta informados.
